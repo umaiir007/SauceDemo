@@ -1,0 +1,41 @@
+package sauceDemoLogIn;
+
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class CheckOut {
+	public static void main(String[] args) throws InterruptedException {
+		// TODO Auto-generated method stub
+		
+		System.setProperty("webdriver.chrome.driver","C:\\Users\\DELL\\Documents\\Automation\\chromedriver_win32\\chromedriver.exe");
+		WebDriver driver = new ChromeDriver();
+		driver.manage().deleteAllCookies();
+		
+		driver.manage().window().maximize();
+		driver.manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		driver.get("https://www.saucedemo.com/");
+		Thread.sleep(2000);
+		
+		driver.findElement(By.id("user-name")).sendKeys("standard_user");
+		driver.findElement(By.id("password")).sendKeys("secret_sauce");
+	    driver.findElement(By.id("login-button")).click();
+		Thread.sleep(2000);
+		
+		driver.findElement(By.id("add-to-cart-sauce-labs-backpack")).click();
+		driver.findElement(By.className("shopping_cart_link")).click();
+		driver.findElement(By.id("checkout")).click();
+		driver.findElement(By.name("firstName")).sendKeys("Una");
+		driver.findElement(By.name("lastName")).sendKeys("Gibson");
+		driver.findElement(By.className("input_error form_input")).sendKeys("75600");
+		
+		driver.findElement(By.className("submit-button btn btn_primary cart_button btn_action")).click();
+		
+		driver.findElement(By.className("btn btn_action btn_medium cart_button")).click();
+		
+		driver.close();
+	}
+}
