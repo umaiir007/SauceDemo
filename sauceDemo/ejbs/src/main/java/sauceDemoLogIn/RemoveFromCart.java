@@ -5,6 +5,8 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import sauceDemoLogIn.AddToCart;
+import sauceDemoLogIn.logInPage;
 
 public class RemoveFromCart {
 	public static void main(String[] args) throws InterruptedException {
