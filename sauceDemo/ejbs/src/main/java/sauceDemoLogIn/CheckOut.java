@@ -5,6 +5,9 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import sauceDemoLogIn.AddToCart;
+import sauceDemoLogIn.RemoveFromCart;
+import sauceDemoLogIn.logInPage;
 
 public class CheckOut {
 	public static void main(String[] args) throws InterruptedException {
@@ -22,7 +25,7 @@ public class CheckOut {
 		
 		driver.findElement(By.id("user-name")).sendKeys("standard_user");
 		driver.findElement(By.id("password")).sendKeys("secret_sauce");
-	    driver.findElement(By.id("login-button")).click();
+	    	driver.findElement(By.id("login-button")).click();
 		Thread.sleep(2000);
 		
 		driver.findElement(By.id("add-to-cart-sauce-labs-backpack")).click();
